@@ -1,9 +1,11 @@
 #language:pt
+@AutomobileInsurance @End2End
 Funcionalidade: Automobile Insurance
 
   Contexto: 
     Dado que o usuario deseja fazer a cotacao do seguro de seu veiculo
 
+	@CadastrarVeiculoSucesso
   Esquema do Cenario: Cadastrar Veiculo com Sucesso
     Quando informar o campo Make como "<marca>"
     E informar o campo Engine Performance [kW] como "<quilometragem>"

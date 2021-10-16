@@ -64,7 +64,7 @@ public class AutomobileInsuranceSteps {
 	@Entao("o sistema devera cadastrar o veiculo, exibindo pagina de dados do seguro.")
 	public void o_sistema_devera_cadastrar_o_veiculo_exibindo_pagina_de_dados_do_seguro() {
 		AutomobileInsurancePage aip = new AutomobileInsurancePage(driver);
-		aip.validarNextEnterInsurantData();
+		aip.validarCampoFirstName();
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
 	}

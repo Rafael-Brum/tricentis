@@ -12,79 +12,95 @@ import utils.MetodosUteis;
 
 public class AutomobileInsurancePage extends MetodosUteis{
 
+	protected WebDriver driver;
+	
 	public AutomobileInsurancePage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy (how = How.ID, using = "make")
-	private WebElement make;
+	private WebElement campoMake;
 	
 	@FindBy (how = How.ID, using = "engineperformance")
-	private WebElement engineperformance;
+	private WebElement campoEnginePerformance;
 	
 	@FindBy (how = How.ID, using = "dateofmanufacture")
-	private WebElement dateofmanufacture;
+	private WebElement campoDateOfManufacture;
 	
 	@FindBy (how = How.ID, using = "numberofseats")
-	private WebElement numberofseats;
+	private WebElement campoNumberOfSeats;
 	
 	@FindBy (how = How.ID, using = "fuel")
-	private WebElement fuelType;
+	private WebElement campoFuelType;
 	
 	@FindBy (how = How.ID, using = "listprice")
-	private WebElement listprice;
+	private WebElement campoListPrice;
 	
 	@FindBy (how = How.ID, using = "licenseplatenumber")
-	private WebElement licenseplatenumber;
+	private WebElement campoLicensePlateNumber;
 	
 	@FindBy (how = How.ID, using = "annualmileage")
-	private WebElement annualmileage;
+	private WebElement campoAnnualMileage;
 	
 	@FindBy (how = How.ID, using = "nextenterinsurantdata")
-	private WebElement nextenterinsurantdata;
+	private WebElement btnNextEnterInsurantData;
 
 	@FindBy (how = How.ID, using = "firstname")
-	private WebElement firstname;
-	
-	public void clicarNextEnterInsurantData() {
-		nextenterinsurantdata.click();
-	}
+	private WebElement campoFirstName;
 	
 	public void preencherCampoMake(String marca) {
-		selecionar(make,marca);
+		esperarElemento(campoMake);
+		selecionar(campoMake,marca);
 	}
 	
 	public void preencherCampoEnginePerformance(String quilometragem) {
-		engineperformance.sendKeys(quilometragem);
+		esperarElemento(campoEnginePerformance);
+		campoEnginePerformance.clear();
+		campoEnginePerformance.sendKeys(quilometragem);
 	}
 	
 	public void preencherCampoDateOfManufacture(String dataDeFabricacao) {
-		dateofmanufacture.sendKeys(dataDeFabricacao);
+		esperarElemento(campoDateOfManufacture);
+		campoDateOfManufacture.clear();
+		campoDateOfManufacture.sendKeys(dataDeFabricacao);
 	}
 	
 	public void preencherCampoNumberOfSeats(String numeroDeLugares) {
-		selecionar(numberofseats,numeroDeLugares);
+		esperarElemento(campoNumberOfSeats);
+		selecionar(campoNumberOfSeats,numeroDeLugares);
 	}
 	
 	public void preencherCampoFuelType(String tipoDeCombustivel) {
-		selecionar(fuelType,tipoDeCombustivel);
+		esperarElemento(campoFuelType);
+		selecionar(campoFuelType,tipoDeCombustivel);
 	}
 	
 	public void preencherCampoListPrice(String listaDePreco) {
-		listprice.sendKeys(listaDePreco);
+		esperarElemento(campoListPrice);
+		campoListPrice.clear();
+		campoListPrice.sendKeys(listaDePreco);
 	}
 	
 	public void preencherCampoLicensePlateNumber(String placaDoCarro) {
-		licenseplatenumber.sendKeys(placaDoCarro);
+		esperarElemento(campoLicensePlateNumber);
+		campoLicensePlateNumber.clear();
+		campoLicensePlateNumber.sendKeys(placaDoCarro);
 	}
 	
 	public void preencherCampoAnnualMileage(String quilometragemAnual) {
-		annualmileage.sendKeys(quilometragemAnual);
+		esperarElemento(campoAnnualMileage);
+		campoAnnualMileage.clear();
+		campoAnnualMileage.sendKeys(quilometragemAnual);
+	}
+	
+	public void clicarNextEnterInsurantData() {
+		esperarElemento(btnNextEnterInsurantData);
+		btnNextEnterInsurantData.click();
 	}
 
-	public void validarNextEnterInsurantData() {
-		assertTrue(firstname.isEnabled());
+	public void validarCampoFirstName() {
+		esperarElemento(campoFirstName);
+		assertTrue(campoFirstName.isEnabled());
 	}
-	
-	
 }

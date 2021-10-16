@@ -8,6 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "classpath:Features"
 		,glue= {"stepdefinitions"}
+		,tags = "@End2End"
 		,plugin = {"pretty", "html:target/cucumber-reports"}  //pretty or usage
 		,monochrome = true
 		)
