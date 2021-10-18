@@ -10,11 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.MetodosUteis;
 
-public class AutomobileInsurancePage extends MetodosUteis{
+public class AutomobileInsuranceDadosVeiculoPage extends MetodosUteis{
 
 	protected WebDriver driver;
 	
-	public AutomobileInsurancePage(WebDriver driver) {
+	public AutomobileInsuranceDadosVeiculoPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -51,7 +51,7 @@ public class AutomobileInsurancePage extends MetodosUteis{
 	
 	public void preencherCampoMake(String marca) {
 		esperarElemento(campoMake);
-		selecionar(campoMake,marca);
+		selecionarDropDown(campoMake,marca);
 	}
 	
 	public void preencherCampoEnginePerformance(String quilometragem) {
@@ -68,12 +68,12 @@ public class AutomobileInsurancePage extends MetodosUteis{
 	
 	public void preencherCampoNumberOfSeats(String numeroDeLugares) {
 		esperarElemento(campoNumberOfSeats);
-		selecionar(campoNumberOfSeats,numeroDeLugares);
+		selecionarDropDown(campoNumberOfSeats,numeroDeLugares);
 	}
 	
 	public void preencherCampoFuelType(String tipoDeCombustivel) {
 		esperarElemento(campoFuelType);
-		selecionar(campoFuelType,tipoDeCombustivel);
+		selecionarDropDown(campoFuelType,tipoDeCombustivel);
 	}
 	
 	public void preencherCampoListPrice(String listaDePreco) {

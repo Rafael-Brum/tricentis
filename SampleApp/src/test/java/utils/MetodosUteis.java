@@ -1,5 +1,7 @@
 package utils;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,10 +20,16 @@ public class MetodosUteis {
 		wait.until(ExpectedConditions.visibilityOf(elemento));
 	}
 	
-	public void selecionar(WebElement elemento, String texto) {
+	public void selecionarDropDown(WebElement elemento, String texto) {
 		driver = Hooks.getDriver();
 		Select dropDown = new Select(elemento);
 		dropDown.selectByVisibleText(texto);
+	}
+	
+	public void selecionarRadioButton(WebElement elemento, String texto) {
+		driver = Hooks.getDriver();
+		assertTrue(elemento.getAttribute("value").equals(texto));
+		elemento.click();
 	}
 	
 }
